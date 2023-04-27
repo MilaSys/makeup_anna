@@ -58,8 +58,6 @@ class Gallery(models.Model):
     image = models.ImageField(
         verbose_name='Изображение',
         upload_to='static/gallery/',
-        blank=True,
-        null=True,
         help_text='Здесь можно загрузить картинку, объёмом не более 5Мб.',
     )
     tags = models.ManyToManyField(
