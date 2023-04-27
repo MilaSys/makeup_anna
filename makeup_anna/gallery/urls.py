@@ -2,7 +2,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'gallery'
+
 urlpatterns = [
-    path('', views.index),
-    # path('ice_cream/<tag>/', views.gallery),
+    path('', views.gallery, name='gall'),
 ]
