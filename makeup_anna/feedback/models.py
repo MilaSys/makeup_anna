@@ -1,7 +1,9 @@
 import phonenumbers
 from django.db import models
+from django.core.validators import validate_datetime
 
 from feedback.strings import ERR_PHONENUMBER
+from feedback.validators import validate_not_past
 
 
 class Feedback(models.Model):
@@ -13,6 +15,7 @@ class Feedback(models.Model):
         message: TextField - пожелания/краткая информация
         created_at: DateTimeField - дата создания
     """
+
     name = models.CharField(
         verbose_name='Имя',
         max_length=100,
@@ -43,3 +46,21 @@ class Feedback(models.Model):
                 parsed_number, phonenumbers.PhoneNumberFormat.E164)
         except phonenumbers.NumberParseException:
             raise ValueError(ERR_PHONENUMBER)
+
+
+class Сountdown(models.Model):
+    """
+    Модель таблицы тэга.
+    Attributes:
+        date: DateTimeField - Дата и время окончания акции
+    """
+
+    date = models.DateTimeField(
+        verbose_name='Дата и время окончания акции',
+        auto_now_add=False,
+        blank=True,
+        null=True,
+        validators=[validate_datetime, validate_not_past],
+        help_text='''Введите дату и время окончания акции
+        в формате 2022-02-22 22:22:22.''',
+    )
