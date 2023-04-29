@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.contrib.auth import get_user_model
+from django.shortcuts import redirect, render
+
 from .forms import GalleryForm
 from .models import Gallery
-from django.shortcuts import redirect
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
