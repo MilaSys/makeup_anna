@@ -16,7 +16,12 @@ SECRET_KEY = (
 
 DEBUG = os.getenv('DEBUG', default='False') == 'True'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '[::1]',
+    'testserver',
+]
 
 
 INSTALLED_APPS = [
@@ -44,6 +49,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'makeup_anna.urls'
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -101,3 +108,5 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
