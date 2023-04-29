@@ -29,7 +29,7 @@ def feedback(request):
             phone = form.cleaned_data['phone']
             message = form.cleaned_data['message']
             m = f'{name}, {phone}, {message}'
-            send_message(bot, message)
+            send_message(bot, m)
             form.save()
             return redirect('/thank-you/')
         return render(request, 'contact.html', {'form': form})
