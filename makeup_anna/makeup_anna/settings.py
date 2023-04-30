@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'gallery.apps.GalleryConfig',
-    'gallery.apps.FeedbackConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [

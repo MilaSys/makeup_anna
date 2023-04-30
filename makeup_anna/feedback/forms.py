@@ -50,5 +50,5 @@ class FeedbackForm(forms.ModelForm):
 class СountdownForm(forms.ModelForm):
     class Meta:
         model = Сountdown
-        fields = ['my_datetime']
+        fields = ['date']
         validators = [validate_datetime, validate_not_past]
