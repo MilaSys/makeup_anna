@@ -1,9 +1,8 @@
 import phonenumbers
 from django.db import models
-# from django.core.validators import validate_datetime
 
 from feedback.strings import ERR_PHONENUMBER
-from feedback.validators import validate_not_past
+from feedback.validators import validate_datetime, validate_not_past
 
 
 class Feedback(models.Model):
