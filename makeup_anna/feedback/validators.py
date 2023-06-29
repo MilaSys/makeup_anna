@@ -1,6 +1,7 @@
 import re
 from django.utils import timezone
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
 
 
 def validate_not_past(value):
@@ -14,3 +15,11 @@ def validate_datetime(value):
     )
     if not datetime_regex.match(value):
         raise ValidationError('Неверный формат даты и времени')
+
+
+phone_number_regex = RegexValidator(
+    regex=r"^\+?1?\d{8,15}$",
+    message=(
+        "Номер телефона должен быть в формате: '+999999999'."
+        "Допустимо от 9 до 15 цифр.")
+)

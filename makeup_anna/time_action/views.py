@@ -1,18 +1,15 @@
-from django.contrib.auth import get_user_model
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from .forms import GalleryForm
-
-User = get_user_model()
+from .forms import ActionForm
 
 
 @login_required
-def gallery(request):
+def action(request):
     if request.method == 'POST':
-        form = GalleryForm(request.POST or None, files=request.FILES or None)
+        form = ActionForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
         return render(request, 'base.html', {'form': form})
-    form = GalleryForm()
+    form = ActionForm()
     return render(request, 'base.html', {'form': form})

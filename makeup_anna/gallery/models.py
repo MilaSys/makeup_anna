@@ -42,7 +42,7 @@ class Tag(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)[:MAX_LENGTH]
+            self.slug = slugify(self.name)[:MAX_LENGTH]
         super().save(*args, **kwargs)
 
 
@@ -50,14 +50,20 @@ class Gallery(models.Model):
     """
     Модель таблицы галлереи.
     Attributes:
+        title: CharField - название
         image: ImageField - фото работы
         tags: ForeignKey - ссылка (ID) на объект класса Tag
         pub_date: DateTimeField - дата создания
     """
 
+    title = models.CharField(
+        max_length=100,
+        verbose_name='Имя',
+        default="Перманентный макияж"
+    )
     image = models.ImageField(
         verbose_name='Изображение',
-        upload_to='static/gallery/',
+        upload_to='gallery/',
         help_text='Здесь можно загрузить картинку, объёмом не более 5Мб.',
     )
     tags = models.ManyToManyField(
@@ -75,6 +81,3 @@ class Gallery(models.Model):
         ordering = ('-pub_date',)
         verbose_name = 'Фото'
         verbose_name_plural = 'Фото'
-
-    def __str__(self):
-        return self.image

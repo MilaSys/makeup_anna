@@ -32,8 +32,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'sorl.thumbnail',
     'gallery.apps.GalleryConfig',
     'feedback.apps.FeedbackConfig',
+    'time_action.apps.TimeActionConfig',
 ]
 
 MIDDLEWARE = [
@@ -93,8 +95,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-default_auto_field = 'django.db.models.AutoField'
-
 
 LANGUAGE_CODE = 'ru-RU'
 
@@ -104,9 +104,11 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 STATIC_URL = '/static/'
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

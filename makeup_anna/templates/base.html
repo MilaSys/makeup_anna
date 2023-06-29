@@ -1,139 +1,151 @@
 {% load static %}
+{% load thumbnail %}
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <title>Студия красоты</title>
-  <meta name="description" content="Мастер Анна Малых предлагает услуги наращивания ресниц и перманентного макияжа в Дмитрове. Качественное оборудование и сертифицированные материалы." />
-
-  <!--module opengraph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Сайт мастера Анны Малых."/>
-  <meta property="og:title" content="Перманентный макияж и наращивание ресниц."/>
-  <meta property="og:description" content="Мастер Анна Малых предлагает услуги наращивания ресниц и перманентного макияжа в Дмитрове. Качественное оборудование и сертифицированные материалы.">
-  <meta property="og:url" content="https://test.ru/"/>
-  <meta property="og:image" content="https://test.ru/upload/test.png"/>
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <!--module opengraph -->
-
-  <!--module schema.org -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Service",
-      "name": "Сайт мастера Анны Малых.",
-      "description": "Мастер Анна Малых предлагает услуги наращивания ресниц и перманентного макияжа в Дмитрове. Качественное оборудование и сертифицированные материалы.",
-      "image": "https://example.com/images/lashes.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ул. Примерная, д. 1",
-        "addressLocality": "Москва",
-        "postalCode": "123456",
-        "addressCountry": "RU"
-      },
-      "telephone": "+7 (495) 123-45-67",
-      "url": "https://example.com/services/lashes",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "21:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Saturday"
-          ],
-          "opens": "10:00",
-          "closes": "18:00"
-        }
-      ],
-      "priceRange": "$$"
-    }
-  </script>
-  <!--module schema.org -->
+  {% include 'includes/head.html' %}
 </head>
 
-<body>
-  <main class="main">
+<body class="body">
+  <main class="main" id="main">
     <section class="head">
       <div class="wrapper">
         <header>
           <div class="top-menu">
             <nav class="top-menu__nav">
+              <div class="burger-btn" id="burger">
+                <span class="burger-btn__line"></span>
+                <span class="burger-btn__line"></span>
+                <span class="burger-btn__line"></span>
+                <span class="burger-btn__line"></span>
+              </div>
               <ul class="top-menu__list">
-                <li class="top-menu__item"><a href="#top-about">О мастере</a></li>
-                <li class="top-menu__item"><a href="#portfolio">Наши работы</a></li>
-                <li class="top-menu__item"><a href="#skills">Преимущества</a></li>
-                <li class="top-menu__item"><a href="#services">Услуги</a></li>
-                <li class="top-menu__item"><a href="#faq">Вопросы и ответы</a></li>
-                <li class="top-menu__item"><a href="#map">Контакты</a></li>
+                <li class="top-menu__item">
+                  <a href="#top-about">О мастере</a>
+                </li>
+                <li class="top-menu__item">
+                  <a href="#portfolio">Наши работы</a>
+                </li>
+                <li class="top-menu__item">
+                  <a href="#skills">Преимущества</a>
+                </li>
+                <li class="top-menu__item">
+                  <a href="#services">Услуги</a>
+                </li>
+                <li class="top-menu__item">
+                  <a href="#faq">Вопросы и ответы</a>
+                </li>
+                <li class="top-menu__item">
+                  <a href="#map">Контакты</a>
+                </li>
               </ul>
             </nav>
             <div class="top-menu__contacts">
-              <a href="tel:+89260392990" class="top-menu__number">8 (926) 039-29-90</a>
-              <a href="https://api.whatsapp.com/send?phone=+89260392990" class="top-menu__whatsapp">записаться через
-                WhatsApp</a>
+              <a href="tel:+89260392990" class="top-menu__number">
+                8 (926) 039-29-90
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=+89260392990"
+                class="top-menu__whatsapp">
+                записаться через WhatsApp
+              </a>
             </div>
           </div>
         </header>
         <div class="top-content">
           <div class="top-content__left">
             <div class="top-content__title">
-              <h2>Голливудские брови, глаза и губы от 2900</h2>
-              <h1>Перманетный макияж от&nbsp;студии <br /><span>Анны Малых</span></h1>
-              <h2>Запишись сегодня, чтобы получить скидку</h2>
+              <h2>Голливудские брови, глаза и губы</h2>
+              <h1>Перманетный макияж от&nbsp;студии<br/>
+                <span>Анны Малых</span>
+              </h1>
+              {% if action_js %}
+                <h2>Запишись сегодня, чтобы получить скидку</h2>
+              {% else %}
+                <h2>Запишись сегодня, чтобы уже завтра забыть о макияже.</h2>
+              {% endif %}
             </div>
+            
             <div class="top-content__sale">
-              <div class="top-content__sale-info">
-                <div class="top-content__sale-info-percent">20<span>%</span></div>
-                <div class="top-content__sale-info-duration"><span class="top-content__sale-discount">скидка</span><span
-                    class="top-content__sale-text">продлится</span><span class="top-content__sale-time">48
-                    часов</span>
+              {% if action_js %}
+                <div class="top-content__sale-info">
+                  <div class="top-content__sale-info-percent">
+                    {{ action.discount }}<span>%</span>
+                  </div>
+                  <div class="top-content__sale-info-duration">
+                    <span class="top-content__sale-discount">скидка</span>
+                    <span class="top-content__sale-text">продлится</span>
+                  </div>
                 </div>
-              </div>
-              <div class="top-content__sale-timer"><span class="hour">02</span>:<span class="minutes">02</span>:<span
-                  class="seconds">02</span>
-              </div>
+                <div class="top-content__sale-wrapper">
+                  <div class="top-content__sale-timer" id="timer">
+                    <span class="days"></span>
+                      :
+                    <span class="hours"></span>
+                      :
+                    <span class="minutes"></span>
+                      :
+                    <span class="seconds"></span>
+                  </div>
+                  <div class="top-conent__sale-timer-text">
+                    <span class="days-text"></span>
+                    <span class="hours-text">часов</span>
+                    <span class="minutes-text">минут</span>
+                    <span class="seconds-text">секунд</span>
+                  </div>
+                </div>
+              {% endif %}
             </div>
-            <form method="post" class="top-content__form">
-              <input type="text" name="name" placeholder="Ваше имя">
-              <input type="text" name="phone" placeholder="Ваш телефон">
-              <button class="top-content__form-btn primary-button">Отправить</button>
+            <form
+              method="post"
+              action="{% url 'feedback:feed' %}"
+              class="top-content__form"
+            >
+              {% csrf_token %}
+              {% for field in form_feetdback %}
+                  {{ field }}
+              {% endfor %}
+              <button class="top-content__form-btn primary-button">
+                Отправить
+              </button>
             </form>
           </div>
           <div class="top-content__right">
             <div class="top-content__skills-item">
-              <img src="./assets/icon/ok.png" class="top-content__skills-icon" alt="Ok">
-              <div class="top-content__skills-title">Бесплатная консультация</div>
+              <img
+                src="{% static 'assets/icon/ok.png' %}"
+                class="top-content__skills-icon" alt="Ok"
+              >
+              <div class="top-content__skills-title">
+                Бесплатная консультация
+              </div>
             </div>
             <div class="top-content__skills-item">
-              <img src="./assets/icon/ok.png" class="top-content__skills-icon" alt="Ok">
-              <div class="top-content__skills-title">Стерильность</div>
+              <img
+                src="{% static 'assets/icon/ok.png' %}"
+                class="top-content__skills-icon" alt="Ok"
+              >
+              <div class="top-content__skills-title">
+                Стерильность
+              </div>
             </div>
             <div class="top-content__skills-item">
-              <img src="./assets/icon/ok.png" class="top-content__skills-icon" alt="Ok">
-              <div class="top-content__skills-title">Качественное оборудование</div>
+              <img
+                src="{% static 'assets/icon/ok.png' %}"
+                class="top-content__skills-icon" alt="Ok"
+              >
+              <div class="top-content__skills-title">
+                Качественное оборудование
+              </div>
             </div>
             <div class="top-content__skills-item">
-              <img src="./assets/icon/ok.png" class="top-content__skills-icon" alt="Ok">
-              <div class="top-content__skills-title">Эффективные анестетики</div>
+              <img
+                src="{% static 'assets/icon/ok.png' %}"
+                class="top-content__skills-icon" alt="Ok"
+              >
+              <div class="top-content__skills-title">
+                Эффективные анестетики
+              </div>
             </div>
           </div>
         </div>
@@ -142,21 +154,43 @@
     <section class="top-about" id="top-about">
       <div class="wrapper">
         <div class="top-about__wrapper">
-          <div class="top-about__left"><img src="./assets/img/top.jpg" alt="Image"></div>
+          <div class="top-about__left">
+            <img src="{% static 'assets/img/top.jpg' %}" alt="Image">
+          </div>
           <div class="top-about__right">
-            <h2 class="top-about__title">Звёздный макияж от мастера <span>Анны Малых</span></h2>
+            <h2 class="top-about__title">
+              Звёздный макияж от мастера <span>Анны&nbsp;Малых</span>
+            </h2>
             <div class="top-about__description">
               <div class="top-about__item">
-                <img class="top-about__img" src="./assets/icon/top-1.png" alt="icon">
-                <span class="top-about__text">Результат держится до трёх лет</span>
+                <img
+                  class="top-about__img"
+                  src="{% static 'assets/icon/top-1.png' %}"
+                  alt="icon"
+                >
+                <span class="top-about__text">
+                  Результат держится до трёх лет
+                </span>
               </div>
               <div class="top-about__item">
-                <img class="top-about__img" src="./assets/icon/top-2.png" alt="icon">
-                <span class="top-about__text">Лучшее немецкое оборудование</span>
+                <img
+                  class="top-about__img"
+                  src="{% static 'assets/icon/top-2.png' %}"
+                  alt="icon"
+                >
+                <span class="top-about__text">
+                  Лучшее немецкое оборудование
+                </span>
               </div>
               <div class="top-about__item">
-                <img class="top-about__img" src="./assets/icon/top-3.png" alt="icon">
-                <span class="top-about__text">Авторская техника нанесения</span>
+                <img
+                  class="top-about__img"
+                  src="{% static 'assets/icon/top-3.png' %}"
+                  alt="icon"
+                >
+                <span class="top-about__text">
+                  Авторская техника нанесения
+                </span>
               </div>
             </div>
           </div>
@@ -170,124 +204,143 @@
           <div class="about__left">
             <div class="about__list">
               <div class="about__item">
-                <img src="./assets/icon/top-2.png" alt="icon">
+                <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
                 <span>Макияж выглядит абсолютно естественно</span>
               </div>
               <div class="about__item">
-                <img src="./assets/icon/top-2.png" alt="icon">
+                <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
                 <span>Авторская техника - моментальное заживление</span>
               </div>
               <div class="about__item">
-                <img src="./assets/icon/top-2.png" alt="icon">
+                <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
                 <span>Абсолютно безболезненная процедура</span>
               </div>
             </div>
           </div>
           <div class="about__right">
             <div class="about__text">
-              <span>Замечательные мастера с большим опытом работы, и это чувствуется в каждой мелочи. В своей студии
-                они очень тщательно выбирают лучшие по цветам и наиболее безопасные пигменты для работы. За более чем
-                8-летний стаж, они регулярно посещали мастер-классы в Европе и Москве для повышения квалификации. За
-                более чем 8-летний стаж, они регулярно посещали мастер-классы в Европе и Москве для повышения
-                квалификации.</span>
+              <span>
+                Замечательный мастер с&nbsp;большим опытом работы,
+                и&nbsp;это чувствуется в&nbsp;каждой мелочи.
+                В&nbsp;своей студии она очень тщательно выбирают
+                лучшие по&nbsp;цветам
+                и&nbsp;наиболее безопасные пигменты для работы.
+                За&nbsp;более чем 8-летний стаж,
+                они регулярно посещали мастер-классы в&nbsp;Европе
+                и&nbsp;Москве для повышения квалификации.
+                За&nbsp;более чем 8-летний стаж,
+                они регулярно посещали мастер-классы
+                в&nbsp;Европе и&nbsp;Москве для повышения квалификации.
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="sale">
-      <div class="wrapper">
-        <h2 class="hidden">Запишитесь на перманентный макияж</h2>
-        <div class="sale__content">
-          <div class="sale__content-item">
-            <div class="sale__content-discount"><span>20</span>%</div>
-            <div class="sale__content-text"><span>Скидка</span> запишитесь&nbsp;на перманентный&nbsp;макияж</div>
-          </div>
-          <div class="sale__button">
-            <a href="#sale-offer" class="sale__button-btn primary-button">Записаться</a>
-          </div>
-        </div>
+    <div class="button-up">
+      <div class="wrap-up">
+        <a class="link-up" href="#main"></a>
       </div>
-    </section>
+    </div>
     <section class="portfolio" id="portfolio">
       <div class="wrapper">
         <h2>Наши работы</h2>
         <div class="portfolio__brows">
           <div class="portfolio__brows-container">
-            <div class="portfolio__brows-image">
-              <img src="./assets/img/brows.jpg" alt="brows">
+            <div class="portfolio__brows-image portfolio__image">
+              <img src="{% static 'assets/img/brows.jpg' %}" alt="brows">
               <span>Брови</span>
             </div>
             <div class="swiper portfolio__brows-slider">
               <div class="swiper-wrapper portfolio__brows-slider-list">
-                <div class="swiper-slide portfolio__brows-slider-item"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/brows.jpg" alt="Slide-1"></div>
+                {% for image in gallery %}
+                  {% for tag in image.tags.all %}
+                    {% if tag.name == 'Брови' %}
+                      {% thumbnail image.image "263x240" upscale=True as im %}
+                        <div class="swiper-slide">
+                          <img src="{{ im.url }}" alt="{{ image.title }}" >
+                        </div>
+                      {% endthumbnail %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor%}
               </div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
           </div>
           <div class="portfolio__brows-button portfolio__line">
-            <a href="#sale-offer" class="portfolio__brows-btn primary-button">Хочу такие брови</a>
+            <a
+              href="#sale-offer"
+              class="portfolio__brows-btn primary-button"
+            >
+              Хочу такие брови
+            </a>
           </div>
         </div>
         <div class="portfolio__lips">
           <div class="portfolio__lips-container">
-            <div class="portfolio__lips-image">
-              <img src="./assets/img/lips.jpg" alt="lips">
+            <div class="portfolio__lips-image portfolio__image">
+              <img src="{% static 'assets/img/lips.jpg' %}" alt="lips">
               <span>Губы</span>
             </div>
             <div class="swiper portfolio__lips-slider">
               <div class="swiper-wrapper portfolio__lips-slider-list">
-                <div class="swiper-slide portfolio__lips-slider-item"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/lips.jpg" alt="Slide-1"></div>
+                {% for image in gallery %}
+                  {% for tag in image.tags.all %}
+                    {% if tag.name == 'Губы' %}
+                      {% thumbnail image.image "263x240" upscale=True as im %}
+                        <div class="swiper-slide">
+                          <img src="{{ im.url }}" alt="{{ image.title }}" >
+                        </div>
+                      {% endthumbnail %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor%}
               </div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
           </div>
           <div class="portfolio__lips-button portfolio__line">
-            <a href="#sale-offer" class="portfolio__lips-btn primary-button">Хочу такие губы</a>
+            <a
+              href="#sale-offer"
+              class="portfolio__lips-btn primary-button"
+            >
+              Хочу такие губы
+            </a>
           </div>
         </div>
         <div class="portfolio__cilia">
           <div class="portfolio__cilia-container">
-            <div class="portfolio__cilia-image">
-              <img src="./assets/img/cilia.jpg" alt="cilia">
+            <div class="portfolio__cilia-image portfolio__image">
+              <img src="{% static 'assets/img/cilia.jpg' %}" alt="cilia">
               <span>Ресницы</span>
             </div>
             <div class="swiper portfolio__cilia-slider">
               <div class="swiper-wrapper portfolio__cilia-slider-list">
-                <div class="swiper-slide portfolio__cilia-slider-item"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-                <div class="swiper-slide"> <img src="./assets/img/cilia.jpg" alt="Slide-1"></div>
-              </div>
+                {% for image in gallery %}
+                  {% for tag in image.tags.all %}
+                    {% if tag.name == 'Ресницы' %}
+                      {% thumbnail image.image "263x240" upscale=True as im %}
+                        <div class="swiper-slide">
+                          <img src="{{ im.url }}" alt="{{ image.title }}" >
+                        </div>
+                      {% endthumbnail %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor%}
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
           </div>
           <div class="portfolio__cilia-button portfolio__line">
-            <a href="#sale-offer" class="portfolio__cilia-btn primary-button">Хочу такие ресницы</a>
+            <a
+              href="#sale-offer"
+              class="portfolio__cilia-btn primary-button"
+            >
+              Хочу такие ресницы
+            </a>
           </div>
         </div>
       </div>
@@ -298,106 +351,149 @@
           <h2>Для чего мне перманентный макияж?</h2>
           <div class="why__content">
             <div class="why__item">
-              <img src="./assets/icon/top-2.png" alt="icon">
+              <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
               <span>изменить цвет и форму бровей</span>
             </div>
             <div class="why__item">
-              <img src="./assets/icon/top-2.png" alt="icon">
-              <span>придать взгляду выразительность<br/>(«подведя» глаза по линии роста ресниц или создав «стрелки»)</span>
+              <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
+              <span>
+                придать взгляду выразительность<br/>
+                («подведя» глаза по линии роста ресниц или создав
+                «стрелки»)
+              </span>
             </div>
             <div class="why__item">
-              <img src="./assets/icon/top-2.png" alt="icon">
+              <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
               <span>визуально изменить разрез или форму глаз</span>
             </div>
             <div class="why__item">
-              <img src="./assets/icon/top-2.png" alt="icon">
-              <span>создать «идеальные» губы, исправив асимметрию, сделав акцент на контуре или&nbsp;придав насыщенность
-                цвету</span>
+              <img src="{% static 'assets/icon/top-2.png' %}" alt="icon">
+              <span>
+                создать «идеальные» губы, исправив асимметрию,
+                сделав акцент на контуре
+                или&nbsp;придав насыщенность цвету
+              </span>
             </div>
           </div>
           <h3>Как узнать <br />нужен ли мне перманент?</h3>
           <div class="why__button">
-            <button class="why__button-btn primary-button">Получить консультацию</button>
+            <button class="why__button-btn primary-button">
+              Получить консультацию
+            </button>
           </div>
         </div>
       </div>
     </section>
-    <section class="sale-offer" id="sale-offer">
-      <div class="wrapper">
-        <div class="sale-offer__container">
-          <div class="sale-offer__left">
-            <div class="sale-offer__left-top">Только до</div>
-            <div class="sale-offer__left-bottom">
-              <span class="sale-offer__left-percent">20</span>
-              <p class="sale-offer__left-text">скидка на&nbsp;авторский перманентный макияж</p>
+    {% if action_js %}
+      <section class="sale-offer" id="sale-offer">
+        <div class="wrapper">
+          <div class="sale-offer__container">
+            <div class="sale-offer__left">
+              <div class="sale-offer__left-top">Только до {{ action.date }}</div>
+              <div class="sale-offer__left-bottom">
+                <span class="sale-offer__left-percent">
+                  {{ action.discount }}
+                </span>
+                <p class="sale-offer__left-text">
+                  скидка на&nbsp;авторский перманентный макияж
+                </p>
+              </div>
+            </div>
+            <div class="sale-offer__right">
+              <h2>
+                Оставьте заявку и&nbsp;получите скидку {{ action.discount }}%
+              </h2>
+              <form
+                method="post"
+                action="{% url 'feedback:feed' %}"
+                class="sale-offer__form"
+              >
+                {% csrf_token %}
+                {% for field in form_feetdback %}
+                    {{ field }}
+                {% endfor %}
+                {% comment %}
+                  <div class="form-popup-policy">
+                    <p>Нажимая кнопку Вы соглашаетесь с<br> 
+                      <a href="#policy">политикой конфиденциальности</a>.
+                    </p>
+                  </div>
+                {% endcomment %}
+                <button class="sale-offer__right-btn primary-button">
+                  Получить скидку
+                </button>
+              </form>
             </div>
           </div>
-          <div class="sale-offer__right">
-            <h2>Оставьте заявку и&nbsp;получите скидку 20%</h2>
-            <form method="post" class="sale-offer__form">
-              <input type="text" name="name" placeholder="Ваше имя">
-              <input type="text" name="phone" placeholder="Ваш телефон">
-              <div class="form-popup-policy">
-                <p>Нажимая кнопку Вы соглашаетесь с<br> <a href="#policy">политикой конфиденциальности</a>.</p>
-              </div>
-              <button class="sale-offer__right-btn primary-button">Получить скидку</button>
-            </form>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    {% endif %}
     <section class="skills" id="skills">
       <div class="wrapper">
         <div class="skills__container">
-          <h2>Индивидуальный подход и высокие технологии <span>мастера Анны Малых</span></h2>
+          <h2>
+            Индивидуальный подход и высокие технологии <span>
+              мастера Анны Малых
+            </span>
+          </h2>
           <div class="skills__list">
             <div class="skills__item">
               <div class="skills__image">
-                <img src="./assets/icon/skills-1.png" alt="icon">
+                <img src="{% static 'assets/icon/skills-1.png' %}" alt="icon">
               </div>
               <div class="skills__description">
                 <span class="skills__description-title">Комфорт</span>
-                <div class="skills__description-text">специально разработанное кресло: вы будете чувствовать себя
-                  максимально комфортно при процедуре</div>
-              </div>
-            </div>
-            <div class="skills__item">
-              <div class="skills__image">
-                <img src="./assets/icon/skills-2.png" alt="icon">
-              </div>
-              <div class="skills__description">
-                <span class="skills__description-title">Доверие</span>
-                <div class="skills__description-text">сотни женщин доверили завершение своего образа Анне и остались
-                  довольны</div>
-              </div>
-            </div>
-            <div class="skills__item">
-              <div class="skills__image">
-                <img src="./assets/icon/skills-3.png" alt="icon">
-              </div>
-              <div class="skills__description">
-                <span class="skills__description-title">Профессионализм</span>
-                <div class="skills__description-text">мастер с 8-летним стажем в области татуажа и микроблейдинга</div>
-              </div>
-            </div>
-            <div class="skills__item">
-              <div class="skills__image">
-                <img src="./assets/icon/skills-4.png" alt="icon">
-              </div>
-              <div class="skills__description">
-                <span class="skills__description-title">Эксклюзивность</span>
-                <div class="skills__description-text">индивидуальный подход и европейское качество, впервые в России
+                <div class="skills__description-text">
+                  специально разработанное кресло: вы будете чувствовать себя
+                  максимально комфортно при процедуре
                 </div>
               </div>
             </div>
             <div class="skills__item">
               <div class="skills__image">
-                <img src="./assets/icon/skills-5.png" alt="icon">
+                <img src="{% static 'assets/icon/skills-2.png' %}" alt="icon">
+              </div>
+              <div class="skills__description">
+                <span class="skills__description-title">Доверие</span>
+                <div class="skills__description-text">
+                  сотни женщин доверили
+                  завершение своего образа Анне и остались довольны
+                </div>
+              </div>
+            </div>
+            <div class="skills__item">
+              <div class="skills__image">
+                <img src="{% static 'assets/icon/skills-3.png' %}" alt="icon">
+              </div>
+              <div class="skills__description">
+                <span class="skills__description-title">Профессионализм</span>
+                <div class="skills__description-text">
+                  мастер с 8-летним стажем в области татуажа и микроблейдинга
+                </div>
+              </div>
+            </div>
+            <div class="skills__item">
+              <div class="skills__image">
+                <img src="{% static 'assets/icon/skills-4.png' %}" alt="icon">
+              </div>
+              <div class="skills__description">
+                <span class="skills__description-title">Эксклюзивность</span>
+                <div class="skills__description-text">
+                  индивидуальный подход и европейское качество, 
+                  впервые в России
+                </div>
+              </div>
+            </div>
+            <div class="skills__item">
+              <div class="skills__image">
+                <img src="{% static 'assets/icon/skills-5.png' %}" alt="icon">
               </div>
               <div class="skills__description">
                 <span class="skills__description-title">Качество</span>
-                <div class="skills__description-text">только мы работаем с красками, которые не уходят в серый и синий
-                  цвета</div>
+                <div class="skills__description-text">
+                  только мы работаем с красками, 
+                  которые не уходят в серый и синий цвета
+                </div>
               </div>
             </div>
           </div>
@@ -409,170 +505,286 @@
         <h2>Наши услуги</h2>
         <div class="services__container">
           <h3>Перманентный макияж</h3>
-          <div class="services__list">
-            <div class="services__item">
-              <div class="services__item-top">Пудровые брови</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
+          <div class="services-wrapper swiper">
+            <div class="services__list swiper-wrapper">
+              <div class="services__item">
+                <div class="services__item-top">Пудровые брови</div>
+                <a
+                  data-fslightbox="gallery" href="./assets/img/services-2.jpg"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-2.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Акварельные губы</div>
+                <a
+                  data-fslightbox="gallery" href="./assets/img/services-1.jpg"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Помадные губы</div>
+                <a
+                  data-fslightbox="gallery" href="./assets/img/services-1.jpg"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Классическая стрелка</div>
+                <a
+                  data-fslightbox="gallery" href="./assets/img/services-1.jpg"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Стрелка с растушевкой</div>
+                <a
+                  data-fslightbox="gallery"
+                  href="{% static 'assets/img/services-1.jpg' %}"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Стрелка с растушевкой</div>
+                <a
+                  data-fslightbox="gallery"
+                  href="{% static 'assets/img/services-1.jpg' %}"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Стрелка с растушевкой</div>
+                <a
+                  data-fslightbox="gallery"
+                  href="{% static 'assets/img/services-1.jpg' %}"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Стрелка с растушевкой</div>
+                <a
+                  data-fslightbox="gallery"
+                  href="{% static 'assets/img/services-1.jpg' %}"
+                >
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
             </div>
-            <div class="services__item">
-              <div class="services__item-top">Акварельные губы</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Помадные губы</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Классическая стрелка</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Стрелка с растушевкой</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
           <h3>Наращивание ресниц</h3>
-          <div class="services__list">
-            <div class="services__item">
-              <div class="services__item-top">Классика</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
+          <div class="services-wrapper swiper">
+            <div class="services__list swiper-wrapper">
+              <div class="services__item">
+                <div class="services__item-top">Классика</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Двойной обьем</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Тройной обьем</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Бархатный объём</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Голливуд</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Неполный объём</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
             </div>
-            <div class="services__item">
-              <div class="services__item-top">Двойной обьем</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Тройной обьем</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Бархатный объём</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Голливуд</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Неполный объём</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
           <h3>Эффекты</h3>
-          <div class="services__list">
-            <div class="services__item">
-              <div class="services__item-top">Натуральный</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
+          <div class="services-wrapper swiper">
+            <div class="services__list swiper-wrapper">
+              <div class="services__item">
+                <div class="services__item-top">Натуральный</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Кукольный</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Лисий</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Стрелка</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Подводка</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Мокрый</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
             </div>
-            <div class="services__item">
-              <div class="services__item-top">Кукольный</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <h3>Ламинирование бровей и ресниц</h3>
+          <div class="services-wrapper swiper">
+            <div class="services__list swiper-wrapper">
+              <div class="services__item">
+                <div class="services__item-top">Натуральный</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Кукольный</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Лисий</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Стрелка</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
+              <div class="services__item">
+                <div class="services__item-top">Подводка</div>
+                <a href="#!">
+                  <div class="services__item-img">
+                    <img src="{% static 'assets/img/services-1.jpg' %}" alt="">
+                  </div>
+                  <div class="services__item-bottom">Посмотреть</div>
+                </a>
+              </div>
             </div>
-            <div class="services__item">
-              <div class="services__item-top">Лисий</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Стрелка</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Подводка</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
-            <div class="services__item">
-              <div class="services__item-top">Мокрый</div>
-              <a href="#!">
-                <div class="services__item-img">
-                  <img src="./assets/img/services-1.jpg" alt="">
-                </div>
-                <div class="services__item-bottom">Посмотреть</div>
-              </a>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
           <div class="services__button">
-            <a href="#sale-offer" class="services__button-btn primary-button">Записаться со скидкой
-                20%</a>
+            <a
+              href="#sale-offer"
+              class="services__button-btn primary-button"
+            >
+              Записаться
+              {% if action_js %}со скидкой {{ action.discount }}%{% endif %}
+            </a>
           </div>
         </div>
       </div>
@@ -586,20 +798,28 @@
               <input type="checkbox" id="1" name="faq" checked="checked">
               <div class="faq-item">
                 <div class="faq-item__header">
-                  <h3 class="faq-item__title">Как долго длится процедура нанесения перманентного макияжа?</h3>
+                  <h3 class="faq-item__title">
+                    Как долго длится процедура нанесения перманентного макияжа?
+                  </h3>
                   <span class="faq-item__icon"></span>
                 </div>
-                <div class="faq-item__text">
-                  <pre>Время сеанса рассчитывается индивидуально и зависит от выбранного участка и техники нанесения татуажа. 
-В среднем процедура занимает от 1,5 до 3 часов.
-
-В это время входит:
-                  
-- консультация,
-- заполнение документации,
-- создание эскиза,
-- анестезия и подготовка к процедуре,
-- нанесение макияжа.</pre>
+                <div class="faq-item__content">
+                  <div class="faq-item__text">
+                    <p>
+                      Время сеанса рассчитывается индивидуально и 
+                      зависит от выбранного участка и техники 
+                      нанесения татуажа.
+                    </p>
+                    <p>
+                      В среднем процедура занимает от 1,5 до 3 часов.
+                    </p><br />
+                    <p>В это время входит:</p><br />
+                    <p>- консультация,</p>
+                    <p>- заполнение документации,</p>
+                    <p>- создание эскиза,</p>
+                    <p>- анестезия и подготовка к процедуре,</p>
+                    <p>- нанесение макияжа.</p>
+                  </div>
                 </div>
               </div>
             </label>
@@ -610,12 +830,21 @@
                   <h3 class="faq-item__title">Больно ли делать татуаж?</h3>
                   <span class="faq-item__icon"></span>
                 </div>
-                <div class="faq-item__text">
-                  <pre>Болезненность процедуры зависит от болевого порога клиента. 
-Для женщин важную роль играет день цикла, усталость, прием лекарственных препаратов 
-и другие внешние и внутренние факторы. Перед процедурой мастер проводит местную анестезию, 
-при необходимости повторяет ее в течение сеанса. Благодаря современным аппаратам, щадящим техникам 
-и качественным анестезирующим препаратам специалистам удается свести болевые ощущения к минимуму.</pre>
+                <div class="faq-item__content">
+                  <div class="faq-item__text">
+                    <p>
+                      Болезненность процедуры зависит от 
+                      болевого порога клиента.
+                      Для женщин важную роль играет день цикла, усталость, 
+                      прием лекарственных препаратов
+                      и другие внешние и внутренние факторы. Перед процедурой 
+                      мастер проводит местную анестезию,
+                      при необходимости повторяет ее в течение сеанса. 
+                      Благодаря современным аппаратам, щадящим техникам
+                      и качественным анестезирующим препаратам специалистам 
+                      удается свести болевые ощущения к минимуму.
+                    </p>
+                  </div>
                 </div>
               </div>
             </label>
@@ -623,13 +852,22 @@
               <input type="checkbox" id="3" name="faq">
               <div class="faq-item">
                 <div class="faq-item__header">
-                  <h3 class="faq-item__title">Как долго прослужит перманентный макияж?</h3>
+                  <h3 class="faq-item__title">
+                    Как долго прослужит перманентный макияж?
+                  </h3>
                   <span class="faq-item__icon"></span>
                 </div>
-                <div class="faq-item__text">
-                  <pre>Перманентный макияж держится от года до трех лет. 
-Минимальный срок службы перманентного макияжа бровей – 12 месяцев. 
-Дольше всего сохраняется пигмент, нанесенный на губы.</pre>
+                <div class="faq-item__content">
+                  <div class="faq-item__text">
+                    <p>Перманентный макияж держится от года до трех лет.</p>
+                      <p>
+                        Минимальный срок службы перманентного макияжа бровей – 
+                        12 месяцев.
+                      </p>
+                      <p>
+                        Дольше всего сохраняется пигмент, нанесенный на губы.
+                      </p>
+                  </div>
                 </div>
               </div>
             </label>
@@ -637,15 +875,26 @@
               <input type="checkbox" id="4" name="faq">
               <div class="faq-item">
                 <div class="faq-item__header">
-                  <h3 class="faq-item__title">Как я буду выглядеть после процедуры?</h3>
+                  <h3 class="faq-item__title">
+                    Как я буду выглядеть после процедуры?
+                  </h3>
                   <span class="faq-item__icon"></span>
                 </div>
-                <div class="faq-item__text">
-                  <pre>После процедуры может наблюдаться отек в области нанесения перманентного макияжа, покраснение, припухлость.
-В некоторых случаях клиентки сталкиваются с временной асимметрией, связанной с отеком тканей.
-Первые дни цвет может казаться слишком ярким. Это временное явление. Оно пройдет после отпадания защитной
-корочки. Окончательно цвет стабилизируется в течение 28 дней с момента нанесения перманента, после чего
-рекомендуется провести коррекцию.</pre>
+                <div class="faq-item__content">
+                  <div class="faq-item__text">
+                    <p>
+                      После процедуры может наблюдаться отек в области 
+                      нанесения перманентного макияжа, покраснение,
+                      припухлость. В некоторых случаях клиентки сталкиваются с 
+                      временной асимметрией, связанной
+                      с отеком тканей. Первые дни цвет может казаться слишком 
+                      ярким. Это временное явление.
+                      Оно пройдет после отпадания защитной корочки. 
+                      Окончательно цвет стабилизируется в течение 28 дней
+                      с момента нанесения перманента, после чего рекомендуется 
+                      провести коррекцию.
+                    </p>
+                  </div>
                 </div>
               </div>
             </label>
@@ -656,25 +905,71 @@
                   <h3 class="faq-item__title">КАковы правила ухода?</h3>
                   <span class="faq-item__icon"></span>
                 </div>
-                <div class="faq-item__text">
-                  <pre>Правила ухода за перманентным макияжем следующие:
-
-- не мочить – 4 дня,
-- не распаривать – 14 дней,
-- не загорать – 30 дней,
-- не отрывать, не ковырять, не чесать защитную корочку,
-- не использовать декоративную косметику до полного заживления тканей,
-- обрабатывать поврежденное место бепантеном, смазывать вазелином или маслом персика.
-
-От выполнения этих правил зависит конечный результат и время службы перманентного макияжа.</pre>
+                <div class="faq-item__content">
+                  <div class="faq-item__text">
+                    <P>
+                      Правила ухода за перманентным макияжем следующие:
+                    </P><br/>
+                    <p>- не мочить – 4 дня,</p>
+                    <p>- не распаривать – 14 дней,</p>
+                    <p>- не загорать – 30 дней,</p>
+                    <p>
+                      - не отрывать, не ковырять, не чесать защитную корочку,
+                    </p>
+                    <p>
+                      - не использовать декоративную косметику до 
+                      полного заживления тканей,
+                    </p>
+                    <p>
+                      - обрабатывать поврежденное место бепантеном, 
+                      смазывать вазелином или маслом персика.
+                    </p><br />
+                    <p>
+                      От выполнения этих правил зависит конечный результат и 
+                      время службы перманентного макияжа.
+                    </p>
+                  </div>
                 </div>
               </div>
             </label>
           </div>
-          <div class="faq__text">Остались вопросы? Задайте их в чате!</div>
-          <div class="faq__button">
-            <button class="faq__button-btn primary-button">Начать чат</button>
-          </div>
+        </div>
+      </div>
+    </section>
+    <section class="admin">
+      <div class="wrapper">
+        <div class="admin__form">
+          <form
+            method="post"
+            action="{% url 'gallery:gall' %}"
+            class="top-content__form"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            {% for field in form_gallery %}
+                {{ field }}
+            {% endfor %}
+            <button
+              class="top-content__form-btn primary-button"
+            >
+              Отправить
+            </button>
+          </form>
+          <form
+            method="post"
+            action="{% url 'action:time' %}"
+            class="top-content__form"
+          >
+            {% csrf_token %}
+            {% for field in form_action %}
+                {{ field }}
+            {% endfor %}
+            <button
+              class="top-content__form-btn primary-button"
+            >
+              Отправить
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -693,11 +988,17 @@
           <div class="map__info-address">Загорская ул., 34А, 3й этаж</div>
           <div class="map__info-schedule">Ежедневно: с 10:00 до 18:00</div>
           <div class="map__info-tel"><a href="tel:+89260392990">8 (926) 039-29-90</a>
-            <a href="https://api.whatsapp.com/send?phone=+89260392990" </div>
+            <a class="tel-api" href="https://api.whatsapp.com/send?phone=+89260392990" </div>
           </div>
         </div>
     </section>
   </main>
+  <script> let action = '{{ action_js }}' </script>
+  <script src="{% static 'js/main.js' %}" defer></script>
+  <script src="{% static 'js/fslightbox.js' %}"></script>
+  <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'js/imask.js' %}"></script>
+  <script src="{% static 'js/timer.js' %}"></script>
 </body>
 
 </html>
