@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render
 from dotenv import load_dotenv
 from telegram import Bot
@@ -10,9 +11,8 @@ from django.contrib.auth.decorators import login_required
 load_dotenv()
 
 NUMBER_OF_ENTRIES = 10
-# os.getenv('TELEGRAM_TOKEN')
-TELEGRAM_TOKEN = '5505368494:AAG5GgEAREHJ9_Id98DwoyFs8rUvz_PXI9c'
-TELEGRAM_CHAT_ID = 1007361327  # os.getenv('TELEGRAM_CHAT_ID')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 bot = Bot(token=TELEGRAM_TOKEN)
 
 
