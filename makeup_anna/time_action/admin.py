@@ -1,7 +1,5 @@
 from django.contrib import admin
-
 from time_action.models import Action
-from django.contrib import admin
 
 
 @admin.register(Action)

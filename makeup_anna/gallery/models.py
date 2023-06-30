@@ -1,8 +1,7 @@
 from django.db import models
-from pytils.translit import slugify
-
 from gallery.constants import MAX_LENGTH
 from gallery.strings import MSG_LETTERS_RU, MSG_LETTERS_US
+from pytils.translit import slugify
 
 
 class Tag(models.Model):
